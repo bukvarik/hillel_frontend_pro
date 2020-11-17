@@ -1,22 +1,22 @@
 // 1) Вывести n чисел из ряда Фибоначчи, где n - вводится с клавиатуры
 
-// let n = +prompt('n', 0);
-// if (n <= 0) {
-//   console.log(0);
-// } else if (n == 1) {
-//   console.log(1);
-// } else {
-//   let a = 1;
-//   let b = 1;
-//   let res = 0;
-//   for (let i = 2; i <= n; i++) {
-//     console.log(a);
-//     res = a + b;
-//     a = b;
-//     b = res;
-//   }
-//   console.log(a);
-// }
+let n = +prompt('n', 0);
+if (n <= 0) {
+  console.log(0);
+} else if (n == 1) {
+  console.log(1);
+} else {
+  let a = 1;
+  let b = 1;
+  let res = 0;
+  for (let i = 2; i <= n; i++) {
+    console.log(a);
+    res = a + b;
+    a = b;
+    b = res;
+  }
+  console.log(a);
+}
 
 
 // 2) Проверить число на простоту. Число вводить с клавиатуры.
