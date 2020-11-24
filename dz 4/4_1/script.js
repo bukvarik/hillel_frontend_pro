@@ -1,6 +1,6 @@
 let m = 50;
 let n = 50;
-center = Math.floor(m/2) + 1;
+center = Math.floor(m/2);
 
 for (let i = 1; i <= m; i++ ) {
   for (let j = 1; j <= n; j++) {
