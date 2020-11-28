@@ -2,10 +2,10 @@ let obj1 = {
   x: 1,
   y: 2,
   z: 3,
-  l: [1, 1, 1],
+  l: [1, 2, 3], //6
   text: 'Text',
   text2: 'Text2',
-  t: [1, 1, 1, 1, 1, 1]
+  t: [1, 2, 3, 4, 5, 6] // 21
 }
 
 let obj2 = {
@@ -15,16 +15,18 @@ let obj2 = {
   p: 23,
   bool1: true,
   bool2: false,
-  j: [2, 3, 4, true, 'true']
+  j: [2, 3, 4, true, 'true'] // 9
 }
 allArrays = [];
 
 function addInArray(obj, array) {
   for (key in obj) {
-    if( typeof obj[key] == "string" || typeof obj[key] == "boolean" || typeof obj[key] == 'number') {
-      continue;
+    for (keys in obj[key]) {
+      if ( typeof obj[key][keys] == "string" || typeof obj[key][keys] == "boolean" || typeof obj[key] == 'array' ) {
+        continue;
+      }
+      array.push(obj[key][keys]);
     }
-    array.push(obj[key]);
   }
 }
 
@@ -35,14 +37,7 @@ console.log(allArrays);
 function sumInArray(arr) {
   let sum = 0
   for (key in arr) {
-    //console.log(key);
-    for (keys in arr[key]) {
-      //console.log(arr[key][keys]);
-      if (typeof arr[key][keys] == 'string' || typeof arr[key][keys] == 'boolean') {
-        continue;
-      }
-      sum += arr[key][keys];
-    }
+    sum += arr[key]
   }
   return sum;
 }
