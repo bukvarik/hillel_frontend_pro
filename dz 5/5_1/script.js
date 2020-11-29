@@ -2,7 +2,7 @@ let obj1 = {
   x: 1,
   y: 2,
   z: 3,
-  l: [1, 2, 3], //6
+  l: [1, 2, 3, 4, 5], //6
   text: 'Text',
   text2: 'Text2',
   t: [1, 2, 3, 4, 5, 6] // 21
@@ -17,28 +17,29 @@ let obj2 = {
   bool2: false,
   j: [2, 3, 4, true, 'true'] // 9
 }
-allArrays = [];
+let allArrays = [];
 
-function addInArray(obj, array) {
+function addInArray(obj) {
   for (key in obj) {
-    for (keys in obj[key]) {
-      if ( typeof obj[key][keys] == "string" || typeof obj[key][keys] == "boolean" || typeof obj[key] == 'array' ) {
-        continue;
-      }
-      array.push(obj[key][keys]);
+    if (!Array.isArray(obj[key])) {
+      continue;
     }
+    allArrays = allArrays.concat(obj[key]);
   }
 }
 
-addInArray(obj1, allArrays);
-addInArray(obj2, allArrays);
+addInArray(obj1);
+addInArray(obj2);
 console.log(allArrays);
 
 function sumInArray(arr) {
   let sum = 0
   for (key in arr) {
-    sum += arr[key]
+    if ( typeof arr[key] == 'number') {
+      sum += arr[key];
+    }
   }
   return sum;
 }
+
 console.log(sumInArray(allArrays));
