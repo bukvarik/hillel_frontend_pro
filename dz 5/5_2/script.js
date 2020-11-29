@@ -14,7 +14,7 @@ function deleteRestrictedSymbolInStr( str, list) {
     newArr = str.split('');
     for (keys in newArr) {
       if (newArr[keys].includes(list[key])) {
-        newArr.splice(keys, 1);
+        delete  newArr[keys];
       }
       //console.log(newArr);
     }
