@@ -6,19 +6,13 @@ function checkArrSum(A, B) {
   let res1 = 0;
   let res2 = 0;
 
-  for (let i = 0; i < A.length; i++) {
-    if(typeof A[i] == 'number') {
-      res1 += A[i];
+  function sum(arr, res) {
+    for (let i = 0; i < arr.length; i++) {
+      if(typeof arr[i] == 'number') {
+        res += arr[i];
+      }
     }
   }
-
-  for (let i = 0; i < B.length; i++) {
-    if(typeof B[i] == 'number') {
-      res2 += B[i];
-    }
-  }
-
-  return (res1 > res2) ? A : B;
+  return (sum(A, res1) > sum(B, res2)) ? A : B;
 }
-
 console.log(checkArrSum(arr1, arr2));
