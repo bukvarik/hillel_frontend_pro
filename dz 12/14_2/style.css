@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+.diagram {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    ". c ."
+    ". b .";
+    grid-gap: 10px;
+}
+
+.input_container {
+    grid-area: c;
+    margin-top: 3px;
+    padding: 5px 10px;
+    align-self: center;
+    justify-self: center;
+}
+
+.visual_container {
+    grid-area: b;
+    align-self: center;
+    justify-self: center; 
+}
+
+.box {
+    margin: 10px 0;
+    width: 30px;
+    height: 110px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.block {
+    justify-content: end;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
