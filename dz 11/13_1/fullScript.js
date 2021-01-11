@@ -11,7 +11,6 @@ window.addEventListener('load', function() {
     }
 
     let throttle = false;
-    const throttleTime = 2000;
 
     function eventKeyDown(event) {
         const key = event.key;
@@ -48,7 +47,7 @@ window.addEventListener('load', function() {
                 throttle = true;    
                 setTimeout(() => {
                     throttle = false;
-                }, throttleTime);
+                }, 2000);
                 
                 box.style.top = parseInt(box.style.top) - jump + 'px';
                 setTimeout( function() {
