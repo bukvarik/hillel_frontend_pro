@@ -10,6 +10,8 @@ window.addEventListener('load', function() {
         console.log('clicked', event, event.type);
     }
 
+    let throttle = false;
+
     function eventKeyDown(event) {
         const key = event.key;
         switch(key) {
@@ -38,6 +40,15 @@ window.addEventListener('load', function() {
                 console.log('Down');
                 break;
             case " ":
+                if (throttle == true) {
+                    return true;
+                }
+        
+                throttle = true;    
+                setTimeout(() => {
+                    throttle = false;
+                }, 2000);
+                
                 box.style.top = parseInt(box.style.top) - jump + 'px';
                 setTimeout( function() {
                     box.style.top = parseInt(box.style.top) + jump + 'px';
@@ -51,10 +62,9 @@ window.addEventListener('load', function() {
                 }, 2000);
                 console.log('CTRL');
                 break;
+            
         }
     }
 
     document.addEventListener('keydown', eventKeyDown);
 });
-
-// Дополнительно: при зажатом CTRL персонаж может продолжать двигаться в ЛЕВО и ПРАВО! (т.е. ВВЕРХ и ВНИЗ не работают, ПРОБЕЛ не работает)
