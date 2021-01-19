@@ -1,17 +1,22 @@
 function delSymInStr (str, arr) {
-  let result = [];
-  let newStr = str.split('');
-
-  for (let i = 0; i < newStr.length; i++) {
-      if (arr.indexOf(newStr[i]) == -1 ) {
-          result.push(newStr[i]);
-      }
+  str = str.split('');
+  for (let i = 0; i < arr.length; i++) {
+    str = str.filter(item => item !== arr[i]);
   }
-  str = result.join('');
-  return str;
+  return str.join('');
 }
+console.log(delSymInStr('hello world', ['l', 'd']));
+console.log(delSymInStr('jfakwjfkahfhajh ahwfjlhajfh wjwhjahj', ['a', 'j', 'k']));
+console.log(delSymInStr('123456789,!?', ['1', '3']));
+console.log(delSymInStr('Hi Peter2005', ['e', '0']));
 
-console.log(delSym('hello world', ['l', 'd']));
-console.log(delSym('jfakwjfkahfhajh ahwfjlhajfh wjwhjahj', ['a', 'j', 'k']));
-console.log(delSym('123456789,!?', ['1', '3']));
-console.log(delSym('Hi Peter2005', ['e', '0']));
+function delSymInStr (str, arr) {
+  str = str.split('');
+  for (let i = 0; i < arr.length; i++) {
+    // if (str.includes(arr[i])) {
+    //   str.splice(str.indexOf(arr[i]), 1);
+    // }
+    str = str.filter(item => item !== arr[i]);
+  }
+  return str.join('');
+}
