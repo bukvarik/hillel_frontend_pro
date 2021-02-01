@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        #context-menu {
+            position: fixed;
+            z-index: 10000;
+            width: 150px;
+            transform: scale(0);
+            transform-origin: top left;
+        }
+
+        #context-menu.active {
+            transform: scale(1);
+            transition: transform 200ms ease-in-out;
+        }
+
+        #globalMenu {
+            position: fixed;
+            z-index: 10000;
+            width: 150px;
+            transform: scale(0);
+            transform-origin: top left;
+        }
+        
+        #globalMenu.active {
+            transform: scale(1);
+            transition: transform 200ms ease-in-out;
+        }
+        
+        .menu__button {
+            border: 1px solid black;
+            width: 150px;
+            text-align: center;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: rgb(61, 128, 196);
+            border: 1px solid black;
+            transform:matrix(1,0,0,1,0,0);
+            transition:transform 1s ease-out 0s;
+        }
+    </style>
+</head>
+<body>
+    <div id="globalMenu"></div>
+    <div id="context-menu"></div>
+    <!-- <div class="menu"></div> -->
+    <div class="box"></div>
+    <script src="script.js"></script>
+</body>
+</html>
