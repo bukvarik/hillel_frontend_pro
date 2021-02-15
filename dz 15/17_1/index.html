@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
         * {
             margin: 0 auto;
             padding: 0;
         }
 
-        #context-menu {
+        .context-menu {
             position: fixed;
             z-index: 10000;
             width: 150px;
@@ -19,24 +19,11 @@
             transform-origin: top left;
         }
 
-        #context-menu.active {
+        .context-menu.active {
             transform: scale(1);
             transition: transform 200ms ease-in-out;
         }
 
-        #globalMenu {
-            position: fixed;
-            z-index: 10000;
-            width: 150px;
-            transform: scale(0);
-            transform-origin: top left;
-        }
-        
-        #globalMenu.active {
-            transform: scale(1);
-            transition: transform 200ms ease-in-out;
-        }
-        
         .menu__button {
             border: 1px solid black;
             width: 150px;
@@ -54,8 +41,8 @@
     </style>
 </head>
 <body>
-    <div id="globalMenu"></div>
-    <div id="context-menu"></div>
+    <div class="context-menu global"></div>
+    <div class="context-menu onBox"></div>
     <!-- <div class="menu"></div> -->
     <div class="box"></div>
     <script src="script.js"></script>
