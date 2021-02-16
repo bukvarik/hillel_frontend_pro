@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+        [class*="player-"] {
+            position: fixed;
+        }
+
+        .solid {
+            border: 2px solid black;
+        }
+
+        .products {
+            display: flex;
+        }
+
+        .product {
+            height: 200px;
+            width: 120px;
+            border-radius: 20px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product__title {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .product__price {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .product__image {
+            width: 100%;
+        }
+
+        .cart_item {
+            width: 250px;
+            margin-bottom: 10px;
+            border: 1px solid red;
+            white-space: nowrap;
+        }
+
+        .cart_quantity {
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .cart_title {   
+            margin-left: 10px;
+            margin-right: 30px;
+            white-space: normal;
+            vertical-align: middle;
+        }
+
+        .cart_price {
+            margin-left: 10px;
+            white-space: normal;
+            vertical-align: middle
+        }
+
+        .cart_img {
+            width: 50%;
+        }
+    </style>
+</head>
+<body style="font-family: monospace;">
+    <ul class="user-list"></ul>
+
+    <div class="products"></div>
+    <hr>
+    <div class="cart_amoun">Total: <span id="total">0</span></div>
+    <div id='cart'></div>
+    <div id="total_containers"></div>
+    <select size="1" id='menu'></select>
+    <button id="clearAll">Clear All</button>
+    <span id='amountVal'>
+</body>
+</html>
